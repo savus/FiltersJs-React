@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "../src/css/main.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="main-container">
+        <ul className="filter-links">
+          <li>
+            <a href="#" data-filter="blue" className="filter-link active">
+              Blue
+            </a>
+          </li>
+          <li>
+            <a href="#" data-filter="red" className="filter-link">
+              Red
+            </a>
+          </li>
+          <li>
+            <a href="#" data-filter="green" className="filter-link">
+              Green
+            </a>
+          </li>
+          <li>
+            <a href="#" data-filter="black" className="filter-link">
+              Black
+            </a>
+          </li>
+          <li>
+            <a href="#" data-filter="orange" className="filter-link">
+              Orange
+            </a>
+          </li>
+        </ul>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="portfolio-container">
+        <div className="filtered-block blue">Blue</div>
+        <div className="filtered-block red">Red</div>
+        <div className="filtered-block green">Green</div>
+        <div className="filtered-block black">Orange</div>
+        <div className="filtered-block">Black</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
