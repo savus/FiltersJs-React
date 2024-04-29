@@ -1,5 +1,6 @@
 import "../src/css/main.css";
 import { FilterLinkComponent } from "./Components/FilterLinkComponent";
+import { SearchFilteredBlocksComponent } from "./Components/SearchFilteredBlocksComponent";
 
 function App() {
   return (
@@ -126,6 +127,7 @@ function App() {
           </div>
         </div>
         <FilterLinkComponent />
+        <SearchFilteredBlocksComponent />
       </div>
     </>
   );

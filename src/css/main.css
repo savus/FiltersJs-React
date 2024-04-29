@@ -64,7 +64,8 @@
   gap: 40px;
 }
 
-.react-filtered-blocks-container {
+.react-filtered-blocks-container,
+.search-filtered-blocks-container {
   display: flex;
   gap: 20px;
 }
