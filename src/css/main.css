@@ -50,3 +50,16 @@
 .orange {
   background-color: orange;
 }
+
+.search-input-filter {
+  margin-top: 50px;
+}
+
+.search-input-field {
+  margin-bottom: 40px;
+}
+
+.search-filtered-blocks {
+  display: flex;
+  gap: 40px;
+}

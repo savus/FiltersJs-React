@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const filterLink = ".filter-link";
+  const dataFilter = "[data-filter]";
+  const filterLink = "filter-link";
   const filterLinkParent = ".filter-links";
   const filteredBlock = ".filtered-block";
 
-  const filterLinkContainer = document.querySelector(`${filterLinkParent}`);
-  const filterLinks = Array.from(document.querySelectorAll(`${filterLink}`));
+  const filterLinksContainer = document.querySelector(filterLinkParent);
   const filteredBlocks = document.querySelectorAll(filteredBlock);
+
+  const searchField = ".search-input-field";
+
+  const searchInputField = document.querySelector(searchField);
 
   const setActive = (element, selector) => {
     const selectedElement = document.querySelector(`${selector}.active`);
@@ -13,16 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
     element.classList.add("active");
   };
 
-  filterLinkContainer.addEventListener("click", (e) => {
+  filterLinksContainer.addEventListener("click", (e) => {
     const target = e.target;
-    if (target.classList.contains("filter-link")) {
-      const dataFilter = target.dataset.filter;
-      setActive(target, filterLink);
+    if (target.classList.contains(filterLink)) {
+      const filter = target.dataset.filter;
+      setActive(target, dataFilter);
       filteredBlocks.forEach((block) => {
         const dataItem = block.dataset.item;
-        if (dataFilter === "all") block.style.display = "flex";
-        else if (dataFilter === dataItem) block.style.display = "flex";
-        else block.style.display = "none";
+        switch (filter) {
+          case "all":
+            block.style.display = "flex";
+            break;
+          case dataItem:
+            block.style.display = "flex";
+            break;
+          default:
+            block.style.display = "none";
+        }
       });
     }
   });

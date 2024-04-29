@@ -80,6 +80,51 @@ function App() {
         </div>
         <div className="filtered-block">Black</div>
       </div>
+      <div className="search-input-filter">
+        <h3>Search Filtered Links in Js</h3>
+        <input type="text" className="search-input-field" />
+        <div className="search-filtered-blocks">
+          <div className="filtered-block blue" data-item="blue">
+            Blue
+          </div>
+          <div className="filtered-block blue" data-item="blue">
+            Blue
+          </div>
+          <div className="filtered-block blue" data-item="blue">
+            Blue
+          </div>
+          <div className="filtered-block red" data-item="red">
+            Red
+          </div>
+          <div className="filtered-block red" data-item="red">
+            Red
+          </div>
+          <div className="filtered-block green" data-item="green">
+            Green
+          </div>
+          <div className="filtered-block green" data-item="green">
+            Green
+          </div>
+          <div className="filtered-block green" data-item="green">
+            Green
+          </div>
+          <div className="filtered-block green" data-item="green">
+            Green
+          </div>
+          <div className="filtered-block orange" data-item="orange">
+            Orange
+          </div>
+          <div className="filtered-block orange" data-item="orange">
+            Orange
+          </div>
+          <div className="filtered-block orange" data-item="orange">
+            Orange
+          </div>
+          <div className="filtered-block orange" data-item="orange">
+            Orange
+          </div>
+        </div>
+      </div>
     </>
   );
 }
