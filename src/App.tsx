@@ -4,7 +4,13 @@ function App() {
   return (
     <>
       <div className="main-container">
+        <h3>Filtered Links In Js</h3>
         <ul className="filter-links">
+          <li>
+            <a href="#" data-filter="all" className="filter-link">
+              All
+            </a>
+          </li>
           <li>
             <a href="#" data-filter="blue" className="filter-link active">
               Blue

@@ -1,3 +1,13 @@
+.main-container h3 {
+  text-align: center;
+}
+
+.filter-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
 .filter-link.active {
   transform: scale(2);
   background-color: blue;
