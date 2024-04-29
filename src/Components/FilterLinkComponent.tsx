@@ -1,12 +1,40 @@
 import { useState } from "react";
+import { FilteredBlockComponent } from "./FilteredBlockComponent";
 
 type TFilterLink = "all" | "blue" | "red" | "green" | "black" | "orange";
+
+const coloredBlocks = [
+  "blue",
+  "blue",
+  "blue",
+  "red",
+  "red",
+  "green",
+  "green",
+  "green",
+  "green",
+  "orange",
+  "orange",
+  "orange",
+  "orange",
+];
 
 export const FilterLinkComponent = () => {
   const [filterLinkState, setFilterLinkState] = useState<TFilterLink>("all");
 
   const checkIfActive = (state: TFilterLink) =>
     state === filterLinkState ? "active" : "";
+
+  const filteredColoredBlocks = coloredBlocks.filter((color) => {
+    switch (filterLinkState) {
+      case "all":
+        return true;
+      case color:
+        return true;
+      default:
+        return false;
+    }
+  });
 
   return (
     <>
@@ -91,6 +119,11 @@ export const FilterLinkComponent = () => {
           </a>
         </li>
       </ul>
+      <div className="react-filtered-blocks-container">
+        {filteredColoredBlocks.map((color, index) => (
+          <FilteredBlockComponent dataItem={color} key={index} />
+        ))}
+      </div>
     </>
   );
 };
