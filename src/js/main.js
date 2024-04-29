@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const dataFilter = "[data-filter]";
   const filterLink = "filter-link";
-  const filterLinkParent = ".filter-links";
+  const filterLinkParent = ".javascript-filter-links";
   const filteredBlock = ".portfolio-container .filtered-block";
 
   const filterLinksContainer = document.querySelector(filterLinkParent);

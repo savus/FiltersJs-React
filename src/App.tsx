@@ -1,11 +1,12 @@
 import "../src/css/main.css";
+import { FilterLinkComponent } from "./Components/FilterLinkComponent";
 
 function App() {
   return (
     <>
       <div className="main-container">
         <h3>Filtered Links In Js</h3>
-        <ul className="filter-links">
+        <ul className="javascript-filter-links">
           <li>
             <a href="#" data-filter="all" className="filter-link">
               All
@@ -124,6 +125,7 @@ function App() {
             Orange
           </div>
         </div>
+        <FilterLinkComponent />
       </div>
     </>
   );
