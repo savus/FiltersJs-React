@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchFilteredBlocks.forEach((block) => {
       const dataItem = block.dataset.item;
-      if (searchInput === "all") block.style.display = "flex";
+      if (searchInput === "all" || searchInput === "")
+        block.style.display = "flex";
       else if (searchInput.includes(dataItem)) block.style.display = "flex";
       else block.style.display = "none";
     });

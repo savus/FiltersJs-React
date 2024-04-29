@@ -21,8 +21,9 @@ export const SearchFilteredBlocksComponent = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const filteredColoredBlocks = coloredBlocks.filter((color) => {
-    if (searchInput === "all" || searchInput === "") return true;
-    else if (searchInput.includes(color)) return true;
+    const trimmedInput = searchInput.toLowerCase().trim();
+    if (trimmedInput === "all" || trimmedInput === "") return true;
+    else if (trimmedInput.includes(color)) return true;
     else return false;
   });
 
