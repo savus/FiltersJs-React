@@ -2,14 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataFilter = "[data-filter]";
   const filterLink = "filter-link";
   const filterLinkParent = ".filter-links";
-  const filteredBlock = ".filtered-block";
+  const filteredBlock = ".portfolio-container .filtered-block";
 
   const filterLinksContainer = document.querySelector(filterLinkParent);
   const filteredBlocks = document.querySelectorAll(filteredBlock);
 
   const searchField = ".search-input-field";
-
   const searchInputField = document.querySelector(searchField);
+  const searchFilteredBlock = ".search-filtered-blocks .filtered-block";
+  const searchFilteredBlocks = document.querySelectorAll(searchFilteredBlock);
 
   const setActive = (element, selector) => {
     const selectedElement = document.querySelector(`${selector}.active`);
@@ -36,5 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+  });
+
+  searchInputField.addEventListener("keyup", (e) => {
+    const searchInput = e.target.value.toLowerCase().trim();
+
+    searchFilteredBlocks.forEach((block) => {
+      const dataItem = block.dataset.item;
+      if (searchInput === "all") block.style.display = "flex";
+      else if (searchInput.includes(dataItem)) block.style.display = "flex";
+      else block.style.display = "none";
+    });
   });
 });
